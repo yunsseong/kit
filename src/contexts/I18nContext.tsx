@@ -34,7 +34,7 @@ const translations: Translations = {
   'common.noFile': { en: 'No file selected', ko: '선택된 파일 없음' },
 
   // Hero
-  'hero.title': { en: 'Web Tools', ko: 'Web Tools' },
+  'hero.title': { en: 'Kit', ko: 'Kit' },
   'hero.subtitle': { en: 'Free online utilities. All processing happens in your browser.', ko: '무료 온라인 유틸리티. 모든 처리는 브라우저에서.' },
   'hero.search': { en: 'Search tools...', ko: '도구 검색...' },
 

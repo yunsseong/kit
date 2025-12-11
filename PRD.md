@@ -1,8 +1,8 @@
-# Web Tools - Product Requirements Document
+# Kit - Product Requirements Document
 
 ## 프로젝트 개요
 
-**프로젝트명**: Web Tools
+**프로젝트명**: Kit
 **목적**: 브라우저에서 바로 사용할 수 있는 올인원 유틸리티 도구 모음
 **핵심 가치**: 서버 업로드 없이 클라이언트에서 처리 → 빠르고 안전함
 
@@ -141,7 +141,7 @@
 ## 파일 구조
 
 ```
-web-tools/
+kit/
 ├── src/
 │   ├── components/
 │   │   ├── common/

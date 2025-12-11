@@ -16,12 +16,12 @@ export default function Header() {
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative">
               <div className="w-10 h-10 bg-charcoal dark:bg-cream flex items-center justify-center">
-                <span className="font-display font-bold text-cream dark:text-charcoal text-sm">WT</span>
+                <span className="font-display font-bold text-cream dark:text-charcoal text-sm">K</span>
               </div>
               <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-lime"></div>
             </div>
             <span className="font-display font-bold text-lg tracking-tight hidden sm:block group-hover:text-lime transition-colors">
-              WEB TOOLS
+              KIT
             </span>
           </Link>
 
