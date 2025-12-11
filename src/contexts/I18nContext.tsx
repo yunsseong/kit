@@ -90,6 +90,8 @@ const translations: Translations = {
   'tool.compressPdf.desc': { en: 'Reduce PDF file size', ko: 'PDF 용량 줄이기' },
   'tool.pdfPageExtract': { en: 'Extract Pages', ko: '페이지 추출' },
   'tool.pdfPageExtract.desc': { en: 'Extract specific pages', ko: '특정 페이지 추출' },
+  'tool.pdfTextExtract': { en: 'PDF Text Extract', ko: 'PDF 텍스트 추출' },
+  'tool.pdfTextExtract.desc': { en: 'Extract all text from PDF', ko: 'PDF에서 모든 텍스트 추출' },
 
   // Specific tool texts
   'json.format': { en: 'Format', ko: '정리' },
@@ -149,6 +151,14 @@ const translations: Translations = {
   'pdf.pages': { en: 'Pages', ko: '페이지' },
   'pdf.allPages': { en: 'All pages', ko: '모든 페이지' },
   'pdf.selectPages': { en: 'Select pages (e.g., 1,3,5-7)', ko: '페이지 선택 (예: 1,3,5-7)' },
+  'pdf.extracting': { en: 'Extracting text...', ko: '텍스트 추출 중...' },
+  'pdf.processingPages': { en: 'Processing {pages} pages...', ko: '{pages} 페이지 처리 중...' },
+  'pdf.extractedText': { en: 'Extracted Text', ko: '추출된 텍스트' },
+  'pdf.copyAll': { en: 'Copy All', ko: '전체 복사' },
+  'pdf.downloadTxt': { en: 'Download TXT', ko: 'TXT 다운로드' },
+  'pdf.page': { en: 'Page', ko: '페이지' },
+  'pdf.noText': { en: 'No text found on this page', ko: '이 페이지에 텍스트가 없습니다' },
+  'pdf.extractAnother': { en: 'Extract Another PDF', ko: '다른 PDF 추출' },
 };
 
 interface I18nContextType {

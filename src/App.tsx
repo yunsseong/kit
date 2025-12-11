@@ -34,6 +34,7 @@ const MergePdf = lazy(() => import('./components/tools/pdf/MergePdf'));
 const SplitPdf = lazy(() => import('./components/tools/pdf/SplitPdf'));
 const CompressPdf = lazy(() => import('./components/tools/pdf/CompressPdf'));
 const PdfPageExtract = lazy(() => import('./components/tools/pdf/PdfPageExtract'));
+const PdfTextExtract = lazy(() => import('./components/tools/pdf/PdfTextExtract'));
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
                 <Route path="/split-pdf" element={<SplitPdf />} />
                 <Route path="/compress-pdf" element={<CompressPdf />} />
                 <Route path="/pdf-page-extract" element={<PdfPageExtract />} />
+                <Route path="/pdf-text-extract" element={<PdfTextExtract />} />
               </Routes>
             </Suspense>
           </Layout>
