@@ -123,7 +123,7 @@ export default function ImageToPdf() {
         <h3 className="font-display font-bold uppercase text-sm mb-4">{t('common.settings')}</h3>
         <div>
           <label className="font-mono text-sm block mb-2">Page Size</label>
-          <div className="flex gap-0">
+          <div className="flex gap-2">
             {[
               { value: 'fit', label: 'Fit to Image' },
               { value: 'a4', label: 'A4' },

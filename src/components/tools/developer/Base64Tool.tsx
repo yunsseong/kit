@@ -32,7 +32,7 @@ export default function Base64Tool() {
   return (
     <ToolLayout title={t('tool.base64')} description={t('tool.base64.desc')}>
       {/* Mode Toggle */}
-      <div className="flex gap-0">
+      <div className="flex gap-2">
         <button
           onClick={() => setMode('encode')}
           className={`tab ${mode === 'encode' ? 'tab-active' : ''}`}

@@ -91,7 +91,7 @@ export default function FormatConvert() {
                 {/* Format Selection */}
                 <div>
                   <label className="font-mono text-sm block mb-2">{t('image.format')}</label>
-                  <div className="flex gap-0">
+                  <div className="flex gap-2">
                     {(['png', 'jpeg', 'webp'] as const).map((format) => (
                       <button
                         key={format}

@@ -32,7 +32,7 @@ export default function UrlEncoder() {
   return (
     <ToolLayout title={t('tool.urlEncoder')} description={t('tool.urlEncoder.desc')}>
       {/* Mode Toggle */}
-      <div className="flex gap-0">
+      <div className="flex gap-2">
         <button
           onClick={() => setMode('encode')}
           className={`tab ${mode === 'encode' ? 'tab-active' : ''}`}

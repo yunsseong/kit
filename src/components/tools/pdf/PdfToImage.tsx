@@ -101,7 +101,7 @@ export default function PdfToImage() {
           </div>
           <div>
             <label className="font-mono text-sm block mb-2">{t('image.format')}</label>
-            <div className="flex gap-0">
+            <div className="flex gap-2">
               {(['png', 'jpeg'] as const).map((f) => (
                 <button
                   key={f}
