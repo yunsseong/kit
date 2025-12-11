@@ -16,7 +16,7 @@ export default function ToolCard({ to, icon, title, description, index = 0 }: To
       style={{ animationFillMode: 'backwards' }}
     >
       <div className="flex items-start gap-4">
-        <div className="w-12 h-12 border-3 border-charcoal dark:border-cream flex items-center justify-center shrink-0 bg-mist dark:bg-slate group-hover:bg-lime group-hover:border-charcoal transition-colors">
+        <div className="w-12 h-12 border-3 border-charcoal dark:border-cream flex items-center justify-center shrink-0 bg-mist dark:bg-charcoal group-hover:bg-lime group-hover:border-charcoal transition-colors">
           {icon}
         </div>
         <div className="min-w-0">

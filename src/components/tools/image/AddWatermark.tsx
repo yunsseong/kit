@@ -12,7 +12,7 @@ export default function AddWatermark() {
   const [position, setPosition] = useState<Position>('center');
   const [opacity, setOpacity] = useState(50);
   const [fontSize, setFontSize] = useState(24);
-  const [color, setColor] = useState('#65A30D'); // dark lime
+  const [color, setColor] = useState('#22C55E'); // dark lime
   const [patternMode, setPatternMode] = useState(false);
   const [patternSpacingX, setPatternSpacingX] = useState(200);
   const [patternSpacingY, setPatternSpacingY] = useState(150);

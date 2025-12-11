@@ -24,8 +24,8 @@ export default {
       boxShadow: {
         'brutal': '4px 4px 0px 0px #1A1A1A',
         'brutal-lg': '8px 8px 0px 0px #1A1A1A',
-        'brutal-lime': '4px 4px 0px 0px #BFFF00',
-        'brutal-dark': '4px 4px 0px 0px #BFFF00',
+        'brutal-lime': '4px 4px 0px 0px #22C55E',
+        'brutal-dark': '4px 4px 0px 0px #22C55E',
       },
       animation: {
         'slide-up': 'slideUp 0.4s ease-out',

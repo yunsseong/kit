@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { I18nProvider } from './contexts/I18nContext';
+import { SearchProvider } from './contexts/SearchContext';
 import Layout from './components/common/Layout';
 import LoadingSpinner from './components/common/LoadingSpinner';
 
@@ -40,6 +41,7 @@ function App() {
   return (
     <ThemeProvider>
       <I18nProvider>
+        <SearchProvider>
         <BrowserRouter>
           <Layout>
             <Suspense fallback={<LoadingSpinner />}>
@@ -77,6 +79,7 @@ function App() {
             </Suspense>
           </Layout>
         </BrowserRouter>
+        </SearchProvider>
       </I18nProvider>
     </ThemeProvider>
   );

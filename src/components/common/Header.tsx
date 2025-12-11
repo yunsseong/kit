@@ -1,11 +1,13 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useI18n } from '../../contexts/I18nContext';
+import { useSearch } from '../../contexts/SearchContext';
 
 export default function Header() {
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
   const { language, setLanguage, t } = useI18n();
+  const { search, setSearch } = useSearch();
   const isHome = location.pathname === '/';
 
   return (
@@ -14,30 +16,39 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <div className="w-10 h-10 bg-charcoal dark:bg-cream flex items-center justify-center">
-                <span className="font-display font-bold text-cream dark:text-charcoal text-sm">K</span>
-              </div>
-              <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-lime"></div>
+            <div className="w-10 h-10 grid grid-cols-2 gap-0.5 bg-charcoal dark:bg-cream p-0.5">
+              <div className="bg-lime"></div>
+              <div className="bg-[#FFFFFF]"></div>
+              <div className="bg-[#FFFFFF]"></div>
+              <div className="bg-lime"></div>
             </div>
             <span className="font-display font-bold text-lg tracking-tight hidden sm:block group-hover:text-lime transition-colors">
               KIT
             </span>
           </Link>
 
-          {/* Navigation (desktop) */}
+          {/* Search Bar */}
           {isHome && (
-            <nav className="hidden md:flex items-center gap-1">
-              <a href="#developer" className="tab">
-                {t('nav.developer')}
-              </a>
-              <a href="#image" className="tab">
-                {t('nav.image')}
-              </a>
-              <a href="#pdf" className="tab">
-                {t('nav.pdf')}
-              </a>
-            </nav>
+            <div className="hidden md:block flex-1 max-w-md mx-8">
+              <div className="relative">
+                <input
+                  type="text"
+                  placeholder={t('hero.search')}
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="w-full h-10 px-4 pl-10 font-mono text-sm border-3 border-charcoal dark:border-cream bg-transparent focus:outline-none focus:bg-charcoal/5 dark:focus:bg-cream/5"
+                />
+                <svg
+                  className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate dark:text-cream/50"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path strokeLinecap="square" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+            </div>
           )}
 
           {/* Actions */}

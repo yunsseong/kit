@@ -74,7 +74,7 @@
   .card-brutal {
     @apply border-3 border-charcoal bg-cream p-6;
     @apply shadow-brutal transition-all duration-200;
-    @apply dark:border-cream dark:bg-slate;
+    @apply dark:border-cream dark:bg-charcoal;
   }
 
   /* Neo-Brutalist Input */
