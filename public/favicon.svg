@@ -4,5 +4,5 @@
   <rect x="55" y="10" width="35" height="35" fill="#FF6B6B"/>
   <rect x="10" y="55" width="35" height="35" fill="#F5F0E8"/>
   <rect x="55" y="55" width="35" height="35" fill="#BFFF00"/>
-  <text x="50" y="58" text-anchor="middle" font-family="monospace" font-size="20" font-weight="bold" fill="#1A1A1A">WT</text>
+  <text x="50" y="62" text-anchor="middle" font-family="monospace" font-size="28" font-weight="bold" fill="#1A1A1A">K</text>
 </svg>
