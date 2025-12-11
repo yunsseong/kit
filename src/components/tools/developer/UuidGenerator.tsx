@@ -67,40 +67,45 @@ function generateUUID(version: UuidVersion): string {
   }
 }
 
-const versionDescriptions: Record<UuidVersion, string> = {
-  v1: 'Time-based (timestamp + random node)',
-  v4: 'Random (most common)',
-  v7: 'Unix timestamp (sortable)',
+const versionInfo: Record<UuidVersion, { label: string; desc: string }> = {
+  v1: { label: 'V1', desc: 'Time-based' },
+  v4: { label: 'V4', desc: 'Random' },
+  v7: { label: 'V7', desc: 'Sortable' },
 };
+
+interface UuidResult {
+  version: UuidVersion;
+  uuid: string;
+}
 
 export default function UuidGenerator() {
   const { t } = useI18n();
-  const [version, setVersion] = useState<UuidVersion>('v4');
-  const [uuids, setUuids] = useState<string[]>([]);
-  const [count, setCount] = useState(1);
-  const [copied, setCopied] = useState<number | null>(null);
+  const [results, setResults] = useState<UuidResult[]>([]);
+  const [copied, setCopied] = useState<string | null>(null);
   const [uppercase, setUppercase] = useState(false);
   const [noDashes, setNoDashes] = useState(false);
 
   const generate = () => {
-    const newUuids = Array.from({ length: count }, () => {
+    const versions: UuidVersion[] = ['v1', 'v4', 'v7'];
+    const newResults = versions.map((version) => {
       let uuid = generateUUID(version);
       if (uppercase) uuid = uuid.toUpperCase();
       if (noDashes) uuid = uuid.replace(/-/g, '');
-      return uuid;
+      return { version, uuid };
     });
-    setUuids(newUuids);
+    setResults(newResults);
   };
 
-  const copyToClipboard = async (uuid: string, index: number) => {
+  const copyToClipboard = async (uuid: string, key: string) => {
     await navigator.clipboard.writeText(uuid);
-    setCopied(index);
+    setCopied(key);
     setTimeout(() => setCopied(null), 2000);
   };
 
   const copyAll = async () => {
-    await navigator.clipboard.writeText(uuids.join('\n'));
-    setCopied(-1);
+    const text = results.map(r => `${r.version.toUpperCase()}: ${r.uuid}`).join('\n');
+    await navigator.clipboard.writeText(text);
+    setCopied('all');
     setTimeout(() => setCopied(null), 2000);
   };
 
@@ -110,42 +115,7 @@ export default function UuidGenerator() {
       <div className="card-brutal">
         <h3 className="font-display font-bold uppercase text-sm mb-4">{t('common.settings')}</h3>
 
-        <div className="flex flex-wrap items-start gap-6">
-          {/* Version Selection */}
-          <div className="flex flex-col gap-2">
-            <label className="font-mono text-sm font-bold">Version:</label>
-            <div className="flex gap-2">
-              {(['v1', 'v4', 'v7'] as UuidVersion[]).map((v) => (
-                <button
-                  key={v}
-                  onClick={() => setVersion(v)}
-                  className={`px-4 py-2 font-mono text-sm font-bold border-3 border-charcoal dark:border-cream transition-all ${
-                    version === v
-                      ? 'bg-lime text-charcoal'
-                      : 'bg-white dark:bg-charcoal hover:bg-mist dark:hover:bg-slate'
-                  }`}
-                >
-                  {v.toUpperCase()}
-                </button>
-              ))}
-            </div>
-            <span className="font-mono text-xs text-slate dark:text-cream/60">
-              {versionDescriptions[version]}
-            </span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <label className="font-mono text-sm">Count:</label>
-            <input
-              type="number"
-              min="1"
-              max="100"
-              value={count}
-              onChange={(e) => setCount(Math.min(100, Math.max(1, Number(e.target.value))))}
-              className="input-brutal w-20"
-            />
-          </div>
-
+        <div className="flex flex-wrap items-center gap-6">
           <label className="flex items-center gap-2 cursor-pointer">
             <input
               type="checkbox"
@@ -173,27 +143,31 @@ export default function UuidGenerator() {
         <button onClick={generate} className="btn-brutal-primary">
           {t('common.generate')}
         </button>
-        {uuids.length > 1 && (
+        {results.length > 0 && (
           <button onClick={copyAll} className="btn-brutal">
-            {copied === -1 ? t('common.copied') : 'Copy All'}
+            {copied === 'all' ? t('common.copied') : 'Copy All'}
           </button>
         )}
       </div>
 
       {/* Results */}
-      {uuids.length > 0 && (
-        <div className="space-y-2">
-          {uuids.map((uuid, index) => (
+      {results.length > 0 && (
+        <div className="space-y-3">
+          {results.map(({ version, uuid }) => (
             <div
-              key={index}
-              className="flex items-center justify-between gap-4 p-4 bg-mist dark:bg-slate border-3 border-charcoal dark:border-cream"
+              key={version}
+              className="flex items-center gap-4 p-4 bg-mist dark:bg-slate border-3 border-charcoal dark:border-cream"
             >
-              <code className="font-mono text-sm break-all">{uuid}</code>
+              <div className="flex flex-col items-center justify-center w-16 shrink-0">
+                <span className="font-mono font-bold text-lg">{versionInfo[version].label}</span>
+                <span className="font-mono text-xs text-slate dark:text-cream/60">{versionInfo[version].desc}</span>
+              </div>
+              <code className="font-mono text-sm break-all flex-1">{uuid}</code>
               <button
-                onClick={() => copyToClipboard(uuid, index)}
+                onClick={() => copyToClipboard(uuid, version)}
                 className="btn-brutal btn-brutal-sm shrink-0"
               >
-                {copied === index ? t('common.copied') : t('common.copy')}
+                {copied === version ? t('common.copied') : t('common.copy')}
               </button>
             </div>
           ))}
