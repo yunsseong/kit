@@ -72,7 +72,7 @@
 
   /* Neo-Brutalist Card */
   .card-brutal {
-    @apply border-3 border-charcoal bg-ivory p-6;
+    @apply border-3 border-charcoal bg-white p-6;
     @apply shadow-brutal transition-all duration-200;
     @apply dark:border-cream dark:bg-charcoal;
   }
