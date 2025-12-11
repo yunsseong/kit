@@ -1,73 +1,110 @@
-# React + TypeScript + Vite
+# Web Tools
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+브라우저에서 바로 사용할 수 있는 올인원 유틸리티 도구 모음입니다.
 
-Currently, two official plugins are available:
+**서버 업로드 없이 클라이언트에서 처리** → 빠르고 안전합니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 주요 기능
 
-## React Compiler
+### 이미지 도구
+| 도구 | 설명 |
+|------|------|
+| 이미지 리사이즈 | 이미지 크기 조정 |
+| 이미지 압축 | 이미지 용량 줄이기 |
+| 포맷 변환 | PNG ↔ JPG ↔ WebP 변환 |
+| 이미지 자르기 | 자유롭게 또는 비율로 자르기 |
+| GIF 만들기 | 여러 이미지로 애니메이션 GIF 생성 |
+| 이미지 → Base64 | 이미지를 Base64 문자열로 변환 |
+| 워터마크 추가 | 이미지에 텍스트 워터마크 추가 |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### PDF 도구
+| 도구 | 설명 |
+|------|------|
+| PDF → 이미지 | PDF 페이지를 이미지로 변환 |
+| 이미지 → PDF | 이미지로 PDF 생성 |
+| PDF 합치기 | 여러 PDF를 하나로 합치기 |
+| PDF 분할 | PDF를 페이지별로 분할 |
+| PDF 압축 | PDF 용량 줄이기 |
+| 페이지 추출 | 특정 페이지만 추출 |
 
-## Expanding the ESLint configuration
+### 개발자 도구
+| 도구 | 설명 |
+|------|------|
+| JSON 포매터 | JSON 정리 및 검증 |
+| Base64 | Base64 인코딩/디코딩 |
+| URL 인코더 | URL 인코딩/디코딩 |
+| 해시 생성기 | MD5, SHA-1, SHA-256, SHA-512 생성 |
+| QR 생성기 | QR 코드 생성 |
+| 색상 변환기 | HEX ↔ RGB ↔ HSL 변환 |
+| UUID 생성기 | UUID v4 생성 |
+| 정규식 테스터 | 정규표현식 테스트 |
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 기술 스택
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **프레임워크**: React 18 + TypeScript
+- **스타일링**: Tailwind CSS (Brutal Design)
+- **빌드**: Vite
+- **라우팅**: React Router v6
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 클라이언트 처리 라이브러리
+- **이미지**: browser-image-compression, gif.js
+- **PDF**: pdf-lib, pdf.js
+- **기타**: crypto-js (해시), qrcode (QR 생성)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 시작하기
+
+### 설치
+
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 개발 서버 실행
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+브라우저에서 `http://localhost:5173` 접속
+
+### 빌드
+
+```bash
+npm run build
+```
+
+### 미리보기
+
+```bash
+npm run preview
+```
+
+## 프로젝트 구조
+
+```
+src/
+├── components/
+│   ├── common/          # 공통 컴포넌트
+│   │   ├── FileDropZone.tsx
+│   │   ├── Header.tsx
+│   │   ├── Layout.tsx
+│   │   └── ToolLayout.tsx
+│   └── tools/
+│       ├── developer/   # 개발자 도구
+│       ├── image/       # 이미지 도구
+│       └── pdf/         # PDF 도구
+├── contexts/
+│   ├── I18nContext.tsx  # 다국어 지원 (한/영)
+│   └── ThemeContext.tsx # 다크모드
+├── pages/
+│   └── Home.tsx
+└── App.tsx
+```
+
+## 다국어 지원
+
+한국어와 영어를 지원합니다. 헤더의 언어 토글 버튼으로 전환할 수 있습니다.
+
+## 라이선스
+
+MIT
