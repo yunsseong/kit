@@ -122,6 +122,10 @@ const translations: Translations = {
   'watermark.fontSize': { en: 'Font Size', ko: '글꼴 크기' },
   'watermark.color': { en: 'Color', ko: '색상' },
   'watermark.preview': { en: 'Preview', ko: '미리보기' },
+  'watermark.patternMode': { en: 'Pattern repeat', ko: '패턴 반복' },
+  'watermark.spacingX': { en: 'Horizontal spacing', ko: '가로 간격' },
+  'watermark.spacingY': { en: 'Vertical spacing', ko: '세로 간격' },
+  'watermark.rotation': { en: 'Rotation', ko: '회전 각도' },
 
   // Image tools additional
   'image.quickResize': { en: 'Quick resize', ko: '빠른 크기 조정' },
