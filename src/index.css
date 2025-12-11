@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-cream: #F5F0E8;
+    --color-charcoal: #1A1A1A;
+    --color-lime: #BFFF00;
+    --color-coral: #FF6B6B;
+    --color-slate: #2D3748;
+    --color-mist: #E8E4DC;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-body antialiased;
+    @apply bg-cream text-charcoal;
+    @apply dark:bg-charcoal dark:text-cream;
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-mist dark:bg-slate;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-charcoal dark:bg-lime rounded-none;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-lime text-charcoal;
+  }
+}
+
+@layer components {
+  /* Neo-Brutalist Button */
+  .btn-brutal {
+    @apply px-6 py-3 font-display font-bold uppercase tracking-wider;
+    @apply border-3 border-charcoal bg-cream text-charcoal;
+    @apply shadow-brutal transition-all duration-150;
+    @apply hover:translate-x-1 hover:translate-y-1 hover:shadow-none;
+    @apply active:translate-x-1 active:translate-y-1 active:shadow-none;
+    @apply dark:border-cream dark:bg-charcoal dark:text-cream dark:shadow-brutal-dark;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-brutal;
+  }
+
+  .btn-brutal-primary {
+    @apply btn-brutal bg-lime text-charcoal border-charcoal;
+    @apply dark:bg-lime dark:text-charcoal dark:border-charcoal;
+  }
+
+  .btn-brutal-danger {
+    @apply btn-brutal bg-coral text-charcoal;
+  }
+
+  .btn-brutal-sm {
+    @apply px-4 py-2 text-sm;
+  }
+
+  /* Neo-Brutalist Card */
+  .card-brutal {
+    @apply border-3 border-charcoal bg-cream p-6;
+    @apply shadow-brutal transition-all duration-200;
+    @apply dark:border-cream dark:bg-slate;
+  }
+
+  /* Neo-Brutalist Input */
+  .input-brutal {
+    @apply w-full px-4 py-3 font-mono text-sm;
+    @apply border-3 border-charcoal bg-white;
+    @apply focus:outline-none focus:ring-0 focus:border-lime;
+    @apply placeholder:text-slate/50;
+    @apply dark:border-cream dark:bg-charcoal dark:text-cream dark:placeholder:text-cream/30;
+  }
+
+  .textarea-brutal {
+    @apply input-brutal resize-none;
+    @apply min-h-[200px];
+  }
+
+  /* File Drop Zone */
+  .dropzone {
+    @apply border-3 border-dashed border-charcoal bg-mist/50;
+    @apply flex flex-col items-center justify-center;
+    @apply transition-all duration-200 cursor-pointer;
+    @apply hover:border-lime hover:bg-lime/10;
+    @apply dark:border-cream dark:bg-slate/30 dark:hover:border-lime dark:hover:bg-lime/10;
+  }
+
+  .dropzone-active {
+    @apply border-lime bg-lime/20 scale-[1.02];
+  }
+
+  /* Tool Card - Note: 'group' class must be added in HTML, not via @apply */
+  .tool-card {
+    @apply card-brutal cursor-pointer relative overflow-hidden;
+    @apply hover:-translate-y-1 hover:shadow-brutal-lg;
+  }
+
+  .tool-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-2 h-full bg-lime;
+    @apply transform -translate-x-full transition-transform duration-200;
+    @apply group-hover:translate-x-0;
+  }
+
+  /* Section Title */
+  .section-title {
+    @apply font-display text-xl md:text-2xl font-bold uppercase tracking-widest;
+    @apply border-b-4 border-charcoal pb-2 mb-6 inline-block;
+    @apply dark:border-cream;
+  }
+
+  /* Tab */
+  .tab {
+    @apply px-4 py-2 font-display font-bold uppercase text-sm tracking-wider;
+    @apply border-3 border-charcoal transition-all;
+    @apply hover:bg-charcoal hover:text-cream;
+    @apply dark:border-cream dark:hover:bg-cream dark:hover:text-charcoal;
+  }
+
+  .tab-active {
+    @apply bg-lime text-charcoal border-charcoal;
+  }
+
+  /* Result Box */
+  .result-box {
+    @apply border-3 border-charcoal bg-white p-4 font-mono text-sm;
+    @apply dark:border-cream dark:bg-slate dark:text-cream;
+    @apply overflow-auto max-h-[400px];
+  }
+
+  /* Toggle Switch */
+  .toggle {
+    @apply relative inline-flex h-8 w-14 items-center;
+    @apply border-3 border-charcoal bg-mist cursor-pointer;
+    @apply dark:border-cream dark:bg-slate;
+  }
+
+  .toggle-dot {
+    @apply absolute h-5 w-5 bg-charcoal transition-all duration-200;
+    @apply dark:bg-cream;
+  }
+
+  .toggle-active .toggle-dot {
+    @apply translate-x-6 bg-lime;
+  }
+}
+
+@layer utilities {
+  .border-3 {
+    border-width: 3px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Staggered animation delays */
+  .stagger-1 { animation-delay: 50ms; }
+  .stagger-2 { animation-delay: 100ms; }
+  .stagger-3 { animation-delay: 150ms; }
+  .stagger-4 { animation-delay: 200ms; }
+  .stagger-5 { animation-delay: 250ms; }
+  .stagger-6 { animation-delay: 300ms; }
+  .stagger-7 { animation-delay: 350ms; }
+  .stagger-8 { animation-delay: 400ms; }
+
+  /* Grid pattern */
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(26, 26, 26, 0.04) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .dark .grid-pattern {
+    background-image:
+      linear-gradient(rgba(245, 240, 232, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245, 240, 232, 0.04) 1px, transparent 1px);
+  }
+
+  /* Diagonal lines pattern */
+  .diagonal-pattern {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(26, 26, 26, 0.03) 10px,
+      rgba(26, 26, 26, 0.03) 20px
+    );
+  }
+
+  .dark .diagonal-pattern {
+    background-image: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 10px,
+      rgba(245, 240, 232, 0.03) 10px,
+      rgba(245, 240, 232, 0.03) 20px
+    );
+  }
+}
