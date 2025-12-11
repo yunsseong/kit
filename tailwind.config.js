@@ -10,6 +10,7 @@ export default {
       colors: {
         // Neo-Brutalist Palette
         cream: '#F5F0E8',
+        ivory: '#FFFEF5',
         charcoal: '#1A1A1A',
         lime: '#22C55E',
         coral: '#FF6B6B',
