@@ -45,7 +45,7 @@ export default function Header() {
             {/* Language Toggle */}
             <button
               onClick={() => setLanguage(language === 'en' ? 'ko' : 'en')}
-              className="px-3 py-1.5 font-mono text-xs font-bold border-3 border-charcoal dark:border-cream hover:bg-charcoal hover:text-cream dark:hover:bg-cream dark:hover:text-charcoal transition-colors"
+              className="h-10 px-3 font-mono text-xs font-bold border-3 border-charcoal dark:border-cream hover:bg-charcoal hover:text-cream dark:hover:bg-cream dark:hover:text-charcoal transition-colors"
             >
               {language === 'en' ? '한국어' : 'EN'}
             </button>
