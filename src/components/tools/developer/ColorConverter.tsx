@@ -86,30 +86,67 @@ function hslToRgb(h: number, s: number, l: number): { r: number; g: number; b: n
 export default function ColorConverter() {
   const { t } = useI18n();
   const [color, setColor] = useState<ColorValues>({
-    hex: '#BFFF00',
-    rgb: { r: 191, g: 255, b: 0 },
-    hsl: { h: 75, s: 100, l: 50 }
+    hex: '#22C55E',
+    rgb: { r: 34, g: 197, b: 94 },
+    hsl: { h: 142, s: 71, l: 45 }
   });
   const [copied, setCopied] = useState<string | null>(null);
 
+  // Separate input states for free text editing
+  const [hexInput, setHexInput] = useState('#22C55E');
+  const [rgbInput, setRgbInput] = useState({ r: '34', g: '197', b: '94' });
+  const [hslInput, setHslInput] = useState({ h: '142', s: '71', l: '45' });
+
   const updateFromHex = (hex: string) => {
-    const rgb = hexToRgb(hex);
+    setHexInput(hex);
+    // Add # if missing
+    const normalizedHex = hex.startsWith('#') ? hex : '#' + hex;
+    const rgb = hexToRgb(normalizedHex);
     if (rgb) {
       const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
-      setColor({ hex, rgb, hsl });
+      setColor({ hex: normalizedHex, rgb, hsl });
+      setRgbInput({ r: String(rgb.r), g: String(rgb.g), b: String(rgb.b) });
+      setHslInput({ h: String(hsl.h), s: String(hsl.s), l: String(hsl.l) });
     }
   };
 
-  const updateFromRgb = (rgb: { r: number; g: number; b: number }) => {
-    const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
-    const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
-    setColor({ hex, rgb, hsl });
+  const updateFromRgb = (key: 'r' | 'g' | 'b', value: string) => {
+    const newRgbInput = { ...rgbInput, [key]: value };
+    setRgbInput(newRgbInput);
+
+    const num = value === '' ? 0 : parseInt(value, 10);
+    if (!isNaN(num) && num >= 0 && num <= 255) {
+      const rgb = {
+        r: newRgbInput.r === '' ? 0 : Math.min(255, Math.max(0, parseInt(newRgbInput.r, 10) || 0)),
+        g: newRgbInput.g === '' ? 0 : Math.min(255, Math.max(0, parseInt(newRgbInput.g, 10) || 0)),
+        b: newRgbInput.b === '' ? 0 : Math.min(255, Math.max(0, parseInt(newRgbInput.b, 10) || 0)),
+      };
+      const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+      const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+      setColor({ hex, rgb, hsl });
+      setHexInput(hex);
+      setHslInput({ h: String(hsl.h), s: String(hsl.s), l: String(hsl.l) });
+    }
   };
 
-  const updateFromHsl = (hsl: { h: number; s: number; l: number }) => {
-    const rgb = hslToRgb(hsl.h, hsl.s, hsl.l);
-    const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
-    setColor({ hex, rgb, hsl });
+  const updateFromHsl = (key: 'h' | 's' | 'l', value: string) => {
+    const newHslInput = { ...hslInput, [key]: value };
+    setHslInput(newHslInput);
+
+    const maxVal = key === 'h' ? 360 : 100;
+    const num = value === '' ? 0 : parseInt(value, 10);
+    if (!isNaN(num) && num >= 0 && num <= maxVal) {
+      const hsl = {
+        h: newHslInput.h === '' ? 0 : Math.min(360, Math.max(0, parseInt(newHslInput.h, 10) || 0)),
+        s: newHslInput.s === '' ? 0 : Math.min(100, Math.max(0, parseInt(newHslInput.s, 10) || 0)),
+        l: newHslInput.l === '' ? 0 : Math.min(100, Math.max(0, parseInt(newHslInput.l, 10) || 0)),
+      };
+      const rgb = hslToRgb(hsl.h, hsl.s, hsl.l);
+      const hex = rgbToHex(rgb.r, rgb.g, rgb.b);
+      setColor({ hex, rgb, hsl });
+      setHexInput(hex);
+      setRgbInput({ r: String(rgb.r), g: String(rgb.g), b: String(rgb.b) });
+    }
   };
 
   const copyToClipboard = async (value: string, type: string) => {
@@ -140,7 +177,7 @@ export default function ColorConverter() {
           </div>
           <input
             type="text"
-            value={color.hex}
+            value={hexInput}
             onChange={(e) => updateFromHex(e.target.value)}
             className="input-brutal"
             placeholder="#000000"
@@ -162,33 +199,30 @@ export default function ColorConverter() {
             <div className="flex items-center gap-2">
               <span className="font-mono text-sm w-6">R</span>
               <input
-                type="number"
-                min="0"
-                max="255"
-                value={color.rgb.r}
-                onChange={(e) => updateFromRgb({ ...color.rgb, r: Number(e.target.value) })}
+                type="text"
+                inputMode="numeric"
+                value={rgbInput.r}
+                onChange={(e) => updateFromRgb('r', e.target.value)}
                 className="input-brutal flex-1"
               />
             </div>
             <div className="flex items-center gap-2">
               <span className="font-mono text-sm w-6">G</span>
               <input
-                type="number"
-                min="0"
-                max="255"
-                value={color.rgb.g}
-                onChange={(e) => updateFromRgb({ ...color.rgb, g: Number(e.target.value) })}
+                type="text"
+                inputMode="numeric"
+                value={rgbInput.g}
+                onChange={(e) => updateFromRgb('g', e.target.value)}
                 className="input-brutal flex-1"
               />
             </div>
             <div className="flex items-center gap-2">
               <span className="font-mono text-sm w-6">B</span>
               <input
-                type="number"
-                min="0"
-                max="255"
-                value={color.rgb.b}
-                onChange={(e) => updateFromRgb({ ...color.rgb, b: Number(e.target.value) })}
+                type="text"
+                inputMode="numeric"
+                value={rgbInput.b}
+                onChange={(e) => updateFromRgb('b', e.target.value)}
                 className="input-brutal flex-1"
               />
             </div>
@@ -210,33 +244,30 @@ export default function ColorConverter() {
             <div className="flex items-center gap-2">
               <span className="font-mono text-sm w-6">H</span>
               <input
-                type="number"
-                min="0"
-                max="360"
-                value={color.hsl.h}
-                onChange={(e) => updateFromHsl({ ...color.hsl, h: Number(e.target.value) })}
+                type="text"
+                inputMode="numeric"
+                value={hslInput.h}
+                onChange={(e) => updateFromHsl('h', e.target.value)}
                 className="input-brutal flex-1"
               />
             </div>
             <div className="flex items-center gap-2">
               <span className="font-mono text-sm w-6">S</span>
               <input
-                type="number"
-                min="0"
-                max="100"
-                value={color.hsl.s}
-                onChange={(e) => updateFromHsl({ ...color.hsl, s: Number(e.target.value) })}
+                type="text"
+                inputMode="numeric"
+                value={hslInput.s}
+                onChange={(e) => updateFromHsl('s', e.target.value)}
                 className="input-brutal flex-1"
               />
             </div>
             <div className="flex items-center gap-2">
               <span className="font-mono text-sm w-6">L</span>
               <input
-                type="number"
-                min="0"
-                max="100"
-                value={color.hsl.l}
-                onChange={(e) => updateFromHsl({ ...color.hsl, l: Number(e.target.value) })}
+                type="text"
+                inputMode="numeric"
+                value={hslInput.l}
+                onChange={(e) => updateFromHsl('l', e.target.value)}
                 className="input-brutal flex-1"
               />
             </div>
