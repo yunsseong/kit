@@ -30,13 +30,10 @@ const UrlIcon = () => (
 
 const ImageBase64Icon = () => (
   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="3" width="8" height="8" rx="1" />
-    <circle cx="5.5" cy="5.5" r="1" fill="currentColor" />
-    <path d="M3 9l2-2 2 2" />
-    <path d="M14 6h7" />
-    <path d="M14 10h5" />
-    <path d="M14 14h7" />
-    <path d="M14 18h4" />
+    <rect x="2" y="6" width="10" height="12" />
+    <line x1="15" y1="8" x2="22" y2="8" />
+    <line x1="15" y1="12" x2="22" y2="12" />
+    <line x1="15" y1="16" x2="22" y2="16" />
   </svg>
 );
 
@@ -83,14 +80,9 @@ const PaletteIcon = () => (
 
 const KeyIcon = () => (
   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
-    <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z" />
-    <path d="M7 8h4" />
-    <path d="M13 8h4" />
-    <path d="M7 12h2" />
-    <path d="M11 12h4" />
-    <path d="M17 12h0" />
-    <path d="M7 16h3" />
-    <path d="M12 16h5" />
+    <line x1="4" y1="8" x2="20" y2="8" />
+    <line x1="4" y1="12" x2="20" y2="12" />
+    <line x1="4" y1="16" x2="20" y2="16" />
   </svg>
 );
 
