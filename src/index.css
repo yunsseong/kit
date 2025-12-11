@@ -21,7 +21,7 @@
   body {
     @apply font-body antialiased;
     @apply bg-cream text-charcoal;
-    @apply dark:bg-charcoal dark:text-cream;
+    @apply dark:bg-dark-bg dark:text-cream;
     margin: 0;
     min-height: 100vh;
   }
@@ -32,11 +32,11 @@
   }
 
   ::-webkit-scrollbar-track {
-    @apply bg-mist dark:bg-slate;
+    @apply bg-mist dark:bg-dark-card;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-charcoal dark:bg-lime rounded-none;
+    @apply bg-charcoal dark:bg-dark-muted rounded-none hover:dark:bg-lime;
   }
 
   /* Selection */
@@ -53,13 +53,13 @@
     @apply shadow-brutal transition-all duration-150;
     @apply hover:translate-x-1 hover:translate-y-1 hover:shadow-none;
     @apply active:translate-x-1 active:translate-y-1 active:shadow-none;
-    @apply dark:border-cream dark:bg-charcoal dark:text-cream dark:shadow-brutal-dark;
+    @apply dark:border-dark-border dark:bg-dark-card dark:text-cream dark:shadow-brutal-dark;
     @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-brutal;
   }
 
   .btn-brutal-primary {
     @apply btn-brutal bg-lime text-charcoal border-charcoal;
-    @apply dark:bg-lime dark:text-charcoal dark:border-charcoal;
+    @apply dark:bg-lime dark:text-charcoal dark:border-lime;
   }
 
   .btn-brutal-danger {
@@ -74,7 +74,7 @@
   .card-brutal {
     @apply border-3 border-charcoal bg-white p-6;
     @apply shadow-brutal transition-all duration-200;
-    @apply dark:border-cream dark:bg-charcoal;
+    @apply dark:border-dark-border dark:bg-dark-card dark:shadow-brutal-dark;
   }
 
   /* Neo-Brutalist Input */
@@ -83,7 +83,8 @@
     @apply border-3 border-charcoal bg-white;
     @apply focus:outline-none focus:ring-0 focus:border-lime;
     @apply placeholder:text-slate/50;
-    @apply dark:border-cream dark:bg-charcoal dark:text-cream dark:placeholder:text-cream/30;
+    @apply dark:border-dark-border dark:bg-dark-bg dark:text-cream dark:placeholder:text-dark-muted;
+    @apply dark:focus:border-lime;
   }
 
   .textarea-brutal {
@@ -97,7 +98,7 @@
     @apply flex flex-col items-center justify-center;
     @apply transition-all duration-200 cursor-pointer;
     @apply hover:border-lime hover:bg-lime/10;
-    @apply dark:border-cream dark:bg-slate/30 dark:hover:border-lime dark:hover:bg-lime/10;
+    @apply dark:border-dark-border dark:bg-dark-card/50 dark:hover:border-lime dark:hover:bg-lime/10;
   }
 
   .dropzone-active {
@@ -108,6 +109,12 @@
   .tool-card {
     @apply card-brutal cursor-pointer relative overflow-hidden;
     @apply hover:-translate-y-1 hover:shadow-brutal-lg;
+  }
+
+  .dark .tool-card:hover {
+    --tw-shadow: 8px 8px 0px 0px #000000;
+    --tw-shadow-colored: 8px 8px 0px 0px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   }
 
   .tool-card::before {
@@ -121,7 +128,7 @@
   .section-title {
     @apply font-display text-xl md:text-2xl font-bold uppercase tracking-widest;
     @apply border-b-4 border-charcoal pb-2 mb-6 inline-block;
-    @apply dark:border-cream;
+    @apply dark:border-lime;
   }
 
   /* Tab */
@@ -129,17 +136,18 @@
     @apply px-4 py-2 font-display font-bold uppercase text-sm tracking-wider;
     @apply border-3 border-charcoal transition-all;
     @apply hover:bg-charcoal hover:text-cream;
-    @apply dark:border-cream dark:hover:bg-cream dark:hover:text-charcoal;
+    @apply dark:border-dark-border dark:text-cream dark:hover:bg-dark-muted dark:hover:text-cream dark:hover:border-dark-muted;
   }
 
   .tab-active {
     @apply bg-lime text-charcoal border-charcoal;
+    @apply dark:bg-lime dark:text-charcoal dark:border-lime;
   }
 
   /* Result Box */
   .result-box {
     @apply border-3 border-charcoal bg-white p-4 font-mono text-sm;
-    @apply dark:border-cream dark:bg-slate dark:text-cream;
+    @apply dark:border-dark-border dark:bg-dark-bg dark:text-cream;
     @apply overflow-auto max-h-[400px];
   }
 
@@ -147,16 +155,17 @@
   .toggle {
     @apply relative inline-flex h-8 w-14 items-center;
     @apply border-3 border-charcoal bg-mist cursor-pointer;
-    @apply dark:border-cream dark:bg-slate;
+    @apply dark:border-dark-border dark:bg-dark-bg;
   }
 
   .toggle-dot {
     @apply absolute h-5 w-5 bg-charcoal transition-all duration-200;
-    @apply dark:bg-cream;
+    @apply dark:bg-dark-muted;
   }
 
   .toggle-active .toggle-dot {
     @apply translate-x-6 bg-lime;
+    @apply dark:bg-lime;
   }
 }
 
@@ -189,8 +198,8 @@
 
   .dark .grid-pattern {
     background-image:
-      linear-gradient(rgba(245, 240, 232, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245, 240, 232, 0.04) 1px, transparent 1px);
+      linear-gradient(rgba(63, 63, 70, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(63, 63, 70, 0.3) 1px, transparent 1px);
   }
 
   /* Diagonal lines pattern */
@@ -209,8 +218,8 @@
       45deg,
       transparent,
       transparent 10px,
-      rgba(245, 240, 232, 0.03) 10px,
-      rgba(245, 240, 232, 0.03) 20px
+      rgba(63, 63, 70, 0.2) 10px,
+      rgba(63, 63, 70, 0.2) 20px
     );
   }
 }

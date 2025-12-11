@@ -16,6 +16,11 @@ export default {
         coral: '#FF6B6B',
         slate: '#2D3748',
         mist: '#E8E4DC',
+        // Dark Mode Layered Palette
+        'dark-bg': '#18181B',
+        'dark-card': '#27272A',
+        'dark-border': '#3F3F46',
+        'dark-muted': '#52525B',
       },
       fontFamily: {
         display: ['"Space Mono"', 'monospace'],
@@ -26,7 +31,8 @@ export default {
         'brutal': '4px 4px 0px 0px #1A1A1A',
         'brutal-lg': '8px 8px 0px 0px #1A1A1A',
         'brutal-lime': '4px 4px 0px 0px #22C55E',
-        'brutal-dark': '4px 4px 0px 0px #22C55E',
+        'brutal-dark': '4px 4px 0px 0px #000000',
+        'brutal-dark-lg': '8px 8px 0px 0px #000000',
       },
       animation: {
         'slide-up': 'slideUp 0.4s ease-out',

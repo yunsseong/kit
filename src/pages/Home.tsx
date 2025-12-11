@@ -223,7 +223,7 @@ export default function Home() {
         <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter mb-4">
           {t('hero.title')}
         </h1>
-        <p className="font-body text-lg md:text-xl text-slate dark:text-cream/70 max-w-2xl">
+        <p className="font-body text-lg md:text-xl text-slate dark:text-dark-muted max-w-2xl">
           {t('hero.subtitle')}
         </p>
       </section>
@@ -288,13 +288,13 @@ export default function Home() {
       {/* No results */}
       {search && filteredDeveloper.length === 0 && filteredImage.length === 0 && filteredPdf.length === 0 && (
         <div className="text-center py-16">
-          <div className="w-16 h-16 mx-auto border-3 border-charcoal dark:border-cream mb-4 flex items-center justify-center">
+          <div className="w-16 h-16 mx-auto border-3 border-charcoal dark:border-dark-border mb-4 flex items-center justify-center">
             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="square" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
           <p className="font-display text-xl">No tools found</p>
-          <p className="font-body text-slate dark:text-cream/60 mt-2">Try a different search term</p>
+          <p className="font-body text-slate dark:text-dark-muted mt-2">Try a different search term</p>
         </div>
       )}
     </div>

@@ -96,7 +96,7 @@ export default function FileDropZone({
 
         <div className="text-center">
           <div className="mb-4">
-            <div className="w-16 h-16 mx-auto border-3 border-charcoal dark:border-cream flex items-center justify-center">
+            <div className="w-16 h-16 mx-auto border-3 border-charcoal dark:border-dark-border flex items-center justify-center">
               <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="square" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
               </svg>
@@ -105,7 +105,7 @@ export default function FileDropZone({
           <p className="font-display font-bold text-lg mb-1">
             {isDragging ? t('common.dropzone.active') : t('common.dropzone')}
           </p>
-          <p className="font-mono text-xs text-slate dark:text-cream/60">
+          <p className="font-mono text-xs text-slate dark:text-dark-muted">
             Max {maxSize}MB {multiple ? '• Multiple files allowed' : ''}
           </p>
         </div>

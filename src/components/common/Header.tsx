@@ -11,12 +11,12 @@ export default function Header() {
   const isHome = location.pathname === '/';
 
   return (
-    <header className="border-b-3 border-charcoal dark:border-cream bg-cream/80 dark:bg-charcoal/80 backdrop-blur-sm sticky top-0 z-50">
+    <header className="border-b-3 border-charcoal dark:border-dark-border bg-cream/80 dark:bg-dark-bg/90 backdrop-blur-sm sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 grid grid-cols-2 gap-0.5 bg-charcoal dark:bg-cream p-0.5">
+            <div className="w-10 h-10 grid grid-cols-2 gap-0.5 bg-charcoal p-0.5">
               <div className="bg-lime"></div>
               <div className="bg-[#FFFFFF]"></div>
               <div className="bg-[#FFFFFF]"></div>
@@ -36,7 +36,7 @@ export default function Header() {
                   placeholder={t('hero.search')}
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full h-10 px-4 pl-10 font-mono text-sm border-3 border-charcoal dark:border-cream bg-transparent focus:outline-none focus:bg-charcoal/5 dark:focus:bg-cream/5"
+                  className="w-full h-10 px-4 pl-10 font-mono text-sm border-3 border-charcoal dark:border-dark-border bg-transparent focus:outline-none focus:bg-charcoal/5 dark:focus:bg-dark-card focus:dark:border-lime"
                 />
                 <svg
                   className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate dark:text-cream/50"
@@ -56,7 +56,7 @@ export default function Header() {
             {/* Language Toggle */}
             <button
               onClick={() => setLanguage(language === 'en' ? 'ko' : 'en')}
-              className="h-10 px-3 font-mono text-xs font-bold border-3 border-charcoal dark:border-cream hover:bg-charcoal hover:text-cream dark:hover:bg-cream dark:hover:text-charcoal transition-colors"
+              className="h-10 px-3 font-mono text-xs font-bold border-3 border-charcoal dark:border-dark-border hover:bg-charcoal hover:text-cream dark:hover:bg-lime dark:hover:text-charcoal dark:hover:border-lime transition-colors"
             >
               {language === 'en' ? '한국어' : 'EN'}
             </button>
@@ -64,7 +64,7 @@ export default function Header() {
             {/* Theme Toggle */}
             <button
               onClick={toggleTheme}
-              className="w-10 h-10 border-3 border-charcoal dark:border-cream flex items-center justify-center hover:bg-charcoal hover:text-cream dark:hover:bg-cream dark:hover:text-charcoal transition-colors"
+              className="w-10 h-10 border-3 border-charcoal dark:border-dark-border flex items-center justify-center hover:bg-charcoal hover:text-cream dark:hover:bg-lime dark:hover:text-charcoal dark:hover:border-lime transition-colors"
               aria-label="Toggle theme"
             >
               {theme === 'light' ? (
