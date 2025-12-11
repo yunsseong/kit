@@ -11,7 +11,7 @@ export default {
         // Neo-Brutalist Palette
         cream: '#F5F0E8',
         charcoal: '#1A1A1A',
-        lime: '#BFFF00',
+        lime: '#22C55E',
         coral: '#FF6B6B',
         slate: '#2D3748',
         mist: '#E8E4DC',
