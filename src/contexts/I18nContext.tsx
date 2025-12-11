@@ -35,7 +35,7 @@ const translations: Translations = {
 
   // Hero
   'hero.title': { en: 'Web Tools', ko: 'Web Tools' },
-  'hero.subtitle': { en: 'Free online utilities. No uploads. All processing happens in your browser.', ko: '무료 온라인 유틸리티. 업로드 없음. 모든 처리는 브라우저에서.' },
+  'hero.subtitle': { en: 'Free online utilities. All processing happens in your browser.', ko: '무료 온라인 유틸리티. 모든 처리는 브라우저에서.' },
   'hero.search': { en: 'Search tools...', ko: '도구 검색...' },
 
   // Categories
