@@ -220,7 +220,7 @@ export default function Home() {
     <div>
       {/* Hero Section */}
       <section className="mb-16 pt-8">
-        <h1 className="font-display text-5xl md:text-7xl font-bold uppercase tracking-tighter mb-4">
+        <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter mb-4">
           {t('hero.title')}
         </h1>
         <p className="font-body text-lg md:text-xl text-slate dark:text-cream/70 max-w-2xl">

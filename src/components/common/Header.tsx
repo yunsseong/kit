@@ -23,7 +23,7 @@ export default function Header() {
               <div className="bg-lime"></div>
             </div>
             <span className="font-display font-bold text-lg tracking-tight hidden sm:block group-hover:text-lime transition-colors">
-              KIT
+              Kit
             </span>
           </Link>
 
