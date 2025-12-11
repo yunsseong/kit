@@ -60,6 +60,10 @@ const translations: Translations = {
   'tool.uuidGenerator.desc': { en: 'Generate unique IDs', ko: '고유 ID 생성' },
   'tool.regexTester': { en: 'Regex Tester', ko: '정규식 테스터' },
   'tool.regexTester.desc': { en: 'Test regular expressions', ko: '정규표현식 테스트' },
+  'tool.xmlFormatter': { en: 'XML Formatter', ko: 'XML 포매터' },
+  'tool.xmlFormatter.desc': { en: 'Format and validate XML', ko: 'XML 정리 및 검증' },
+  'tool.xmlParser': { en: 'XML Parser', ko: 'XML 파서' },
+  'tool.xmlParser.desc': { en: 'Convert XML ↔ JSON', ko: 'XML ↔ JSON 변환' },
 
   // Image Tools
   'tool.imageResize': { en: 'Image Resize', ko: '이미지 리사이즈' },
@@ -98,6 +102,18 @@ const translations: Translations = {
   'json.minify': { en: 'Minify', ko: '압축' },
   'json.valid': { en: 'Valid JSON', ko: '유효한 JSON' },
   'json.invalid': { en: 'Invalid JSON', ko: '유효하지 않은 JSON' },
+
+  'xml.format': { en: 'Format', ko: '정리' },
+  'xml.minify': { en: 'Minify', ko: '압축' },
+  'xml.validate': { en: 'Validate', ko: '검증' },
+  'xml.valid': { en: 'Valid XML', ko: '유효한 XML' },
+  'xml.invalid': { en: 'Invalid XML', ko: '유효하지 않은 XML' },
+  'xml.loadSample': { en: 'Load sample', ko: '샘플 로드' },
+  'xmlParser.swap': { en: 'Swap', ko: '교환' },
+  'xmlParser.attrPrefix': { en: 'Attr prefix', ko: '속성 접두사' },
+  'xmlParser.ignoreAttrs': { en: 'Ignore attributes', ko: '속성 무시' },
+  'xmlParser.singleRoot': { en: 'JSON must have a single root element', ko: 'JSON은 단일 루트 요소가 필요합니다' },
+  'common.error': { en: 'An error occurred', ko: '오류가 발생했습니다' },
 
   'base64.encode': { en: 'Encode', ko: '인코딩' },
   'base64.decode': { en: 'Decode', ko: '디코딩' },

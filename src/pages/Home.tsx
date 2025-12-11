@@ -95,6 +95,24 @@ const RegexIcon = () => (
   </svg>
 );
 
+const XmlIcon = () => (
+  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <polyline points="4 7 4 4 20 4 20 7" />
+    <polyline points="4 17 4 20 20 20 20 17" />
+    <line x1="9" y1="9" x2="15" y2="15" />
+    <line x1="15" y1="9" x2="9" y2="15" />
+  </svg>
+);
+
+const XmlParserIcon = () => (
+  <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
+    <path d="M8 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3" />
+    <path d="M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3" />
+    <path d="M12 8l4 4-4 4" />
+    <path d="M8 12h8" />
+  </svg>
+);
+
 const ResizeIcon = () => (
   <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
     <polyline points="15 3 21 3 21 9" />
@@ -181,6 +199,8 @@ export default function Home() {
     { to: '/color-converter', icon: <PaletteIcon />, titleKey: 'tool.colorConverter', descKey: 'tool.colorConverter.desc' },
     { to: '/uuid-generator', icon: <KeyIcon />, titleKey: 'tool.uuidGenerator', descKey: 'tool.uuidGenerator.desc' },
     { to: '/regex-tester', icon: <RegexIcon />, titleKey: 'tool.regexTester', descKey: 'tool.regexTester.desc' },
+    { to: '/xml-formatter', icon: <XmlIcon />, titleKey: 'tool.xmlFormatter', descKey: 'tool.xmlFormatter.desc' },
+    { to: '/xml-parser', icon: <XmlParserIcon />, titleKey: 'tool.xmlParser', descKey: 'tool.xmlParser.desc' },
   ];
 
   const imageTools = [

@@ -18,6 +18,8 @@ const QrGenerator = lazy(() => import('./components/tools/developer/QrGenerator'
 const ColorConverter = lazy(() => import('./components/tools/developer/ColorConverter'));
 const UuidGenerator = lazy(() => import('./components/tools/developer/UuidGenerator'));
 const RegexTester = lazy(() => import('./components/tools/developer/RegexTester'));
+const XmlFormatter = lazy(() => import('./components/tools/developer/XmlFormatter'));
+const XmlParser = lazy(() => import('./components/tools/developer/XmlParser'));
 
 // Image Tools
 const ImageResize = lazy(() => import('./components/tools/image/ImageResize'));
@@ -57,6 +59,8 @@ function App() {
                 <Route path="/color-converter" element={<ColorConverter />} />
                 <Route path="/uuid-generator" element={<UuidGenerator />} />
                 <Route path="/regex-tester" element={<RegexTester />} />
+                <Route path="/xml-formatter" element={<XmlFormatter />} />
+                <Route path="/xml-parser" element={<XmlParser />} />
 
                 {/* Image Tools */}
                 <Route path="/image-resize" element={<ImageResize />} />
