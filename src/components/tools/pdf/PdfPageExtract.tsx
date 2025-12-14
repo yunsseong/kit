@@ -102,7 +102,7 @@ export default function PdfPageExtract() {
   const previewPages = parsePageInput(pageInput);
 
   return (
-    <ToolLayout title={t('tool.pdfPageExtract')} description={t('tool.pdfPageExtract.desc')}>
+    <ToolLayout title={t('tool.pdfPageExtract')} description={t('tool.pdfPageExtract.desc')} seoKey="pdfPageExtract">
       {!pdfFile ? (
         <FileDropZone
           onFileSelect={handleFileSelect}

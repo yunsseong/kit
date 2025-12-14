@@ -92,7 +92,7 @@ export default function MergePdf() {
   const totalPages = pdfs.reduce((sum, pdf) => sum + pdf.pageCount, 0);
 
   return (
-    <ToolLayout title={t('tool.mergePdf')} description={t('tool.mergePdf.desc')}>
+    <ToolLayout title={t('tool.mergePdf')} description={t('tool.mergePdf.desc')} seoKey="mergePdf">
       {/* Upload */}
       <FileDropZone
         onFileSelect={handleFileSelect}

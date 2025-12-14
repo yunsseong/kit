@@ -162,7 +162,7 @@ export default function AddWatermark() {
   ];
 
   return (
-    <ToolLayout title={t('tool.addWatermark')} description={t('tool.addWatermark.desc')}>
+    <ToolLayout title={t('tool.addWatermark')} description={t('tool.addWatermark.desc')} seoKey="addWatermark">
       {!image ? (
         <FileDropZone
           onFileSelect={handleFileSelect}

@@ -30,7 +30,7 @@ export default function UrlEncoder() {
   };
 
   return (
-    <ToolLayout title={t('tool.urlEncoder')} description={t('tool.urlEncoder.desc')}>
+    <ToolLayout title={t('tool.urlEncoder')} description={t('tool.urlEncoder.desc')} seoKey="urlEncoder">
       {/* Mode Toggle */}
       <div className="flex gap-2">
         <button

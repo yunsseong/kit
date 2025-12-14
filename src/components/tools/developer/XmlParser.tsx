@@ -217,7 +217,7 @@ export default function XmlParser() {
 }`;
 
   return (
-    <ToolLayout title={t('tool.xmlParser')} description={t('tool.xmlParser.desc')}>
+    <ToolLayout title={t('tool.xmlParser')} description={t('tool.xmlParser.desc')} seoKey="xmlParser">
       {/* Mode Toggle */}
       <div className="flex flex-wrap items-center gap-4 mb-6">
         <div className="flex border-3 border-charcoal dark:border-dark-border">

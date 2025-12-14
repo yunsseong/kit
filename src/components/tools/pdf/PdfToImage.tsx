@@ -80,7 +80,7 @@ export default function PdfToImage() {
   };
 
   return (
-    <ToolLayout title={t('tool.pdfToImage')} description={t('tool.pdfToImage.desc')}>
+    <ToolLayout title={t('tool.pdfToImage')} description={t('tool.pdfToImage.desc')} seoKey="pdfToImage">
       {/* Settings */}
       <div className="card-brutal">
         <h3 className="font-display font-bold uppercase text-sm mb-4">{t('common.settings')}</h3>

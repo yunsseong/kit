@@ -77,7 +77,7 @@ export default function ImageResize() {
   };
 
   return (
-    <ToolLayout title={t('tool.imageResize')} description={t('tool.imageResize.desc')}>
+    <ToolLayout title={t('tool.imageResize')} description={t('tool.imageResize.desc')} seoKey="imageResize">
       {!image ? (
         <FileDropZone
           onFileSelect={handleFileSelect}

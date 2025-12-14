@@ -89,7 +89,7 @@ export default function SplitPdf() {
   };
 
   return (
-    <ToolLayout title={t('tool.splitPdf')} description={t('tool.splitPdf.desc')}>
+    <ToolLayout title={t('tool.splitPdf')} description={t('tool.splitPdf.desc')} seoKey="splitPdf">
       {!pdfFile ? (
         <FileDropZone
           onFileSelect={handleFileSelect}

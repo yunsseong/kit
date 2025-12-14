@@ -45,7 +45,7 @@ export default function ImageToBase64() {
   };
 
   return (
-    <ToolLayout title={t('tool.imageToBase64')} description={t('tool.imageToBase64.desc')}>
+    <ToolLayout title={t('tool.imageToBase64')} description={t('tool.imageToBase64.desc')} seoKey="imageToBase64">
       {!image ? (
         <FileDropZone
           onFileSelect={handleFileSelect}

@@ -38,7 +38,7 @@ export default function JsonFormatter() {
   };
 
   return (
-    <ToolLayout title={t('tool.jsonFormatter')} description={t('tool.jsonFormatter.desc')}>
+    <ToolLayout title={t('tool.jsonFormatter')} description={t('tool.jsonFormatter.desc')} seoKey="jsonFormatter">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Input */}
         <div>

@@ -179,6 +179,85 @@ const translations: Translations = {
   'pdf.page': { en: 'Page', ko: '페이지' },
   'pdf.noText': { en: 'No text found on this page', ko: '이 페이지에 텍스트가 없습니다' },
   'pdf.extractAnother': { en: 'Extract Another PDF', ko: '다른 PDF 추출' },
+
+  // SEO - Page Titles (optimized for search)
+  'seo.home.title': { en: 'Kit | Free Online Utilities - Image, PDF & Developer Tools', ko: 'Kit | 무료 온라인 유틸리티 - 이미지, PDF, 개발자 도구' },
+  'seo.home.description': { en: 'Free online utilities for images, PDFs, and developers. All processing happens in your browser - no uploads, 100% private and secure.', ko: '이미지, PDF, 개발자를 위한 무료 온라인 도구. 모든 처리는 브라우저에서 - 서버 업로드 없이 100% 안전하게.' },
+
+  // Developer Tools SEO
+  'seo.jsonFormatter.title': { en: 'JSON Formatter & Validator - Free Online Tool', ko: 'JSON 포매터 & 검증기 - 무료 온라인 도구' },
+  'seo.jsonFormatter.description': { en: 'Format, beautify and validate JSON online. No server uploads, works entirely in your browser. Free and secure.', ko: 'JSON 정리, 들여쓰기, 검증을 온라인에서. 서버 업로드 없이 브라우저에서 안전하게 처리.' },
+
+  'seo.base64.title': { en: 'Base64 Encoder/Decoder - Free Online Tool', ko: 'Base64 인코더/디코더 - 무료 온라인 도구' },
+  'seo.base64.description': { en: 'Encode or decode Base64 strings instantly. No server uploads, 100% browser-based and private.', ko: 'Base64 문자열 인코딩/디코딩을 즉시. 서버 업로드 없이 100% 브라우저 기반.' },
+
+  'seo.urlEncoder.title': { en: 'URL Encoder/Decoder - Free Online Tool', ko: 'URL 인코더/디코더 - 무료 온라인 도구' },
+  'seo.urlEncoder.description': { en: 'Encode or decode URLs instantly. Handles special characters safely. No server uploads required.', ko: 'URL 인코딩/디코딩을 즉시. 특수문자 안전하게 처리. 서버 업로드 불필요.' },
+
+  'seo.hashGenerator.title': { en: 'Hash Generator (MD5, SHA-1, SHA-256) - Free Online', ko: '해시 생성기 (MD5, SHA-1, SHA-256) - 무료 온라인' },
+  'seo.hashGenerator.description': { en: 'Generate MD5, SHA-1, SHA-256, SHA-512 hashes instantly. Secure, browser-based, no data sent to servers.', ko: 'MD5, SHA-1, SHA-256, SHA-512 해시를 즉시 생성. 안전하게 브라우저에서, 서버 전송 없음.' },
+
+  'seo.qrGenerator.title': { en: 'QR Code Generator - Free Online Tool', ko: 'QR 코드 생성기 - 무료 온라인 도구' },
+  'seo.qrGenerator.description': { en: 'Create QR codes instantly for URLs, text, and more. Download as PNG. Free and no sign-up required.', ko: 'URL, 텍스트 등을 위한 QR 코드를 즉시 생성. PNG로 다운로드. 무료, 가입 불필요.' },
+
+  'seo.colorConverter.title': { en: 'Color Converter (HEX, RGB, HSL) - Free Online', ko: '색상 변환기 (HEX, RGB, HSL) - 무료 온라인' },
+  'seo.colorConverter.description': { en: 'Convert colors between HEX, RGB, and HSL formats instantly. Visual color picker included.', ko: 'HEX, RGB, HSL 색상 형식을 즉시 변환. 비주얼 색상 선택기 포함.' },
+
+  'seo.uuidGenerator.title': { en: 'UUID Generator (v1-v7) - Free Online Tool', ko: 'UUID 생성기 (v1-v7) - 무료 온라인 도구' },
+  'seo.uuidGenerator.description': { en: 'Generate UUID v1, v4, v6, v7 instantly. Bulk generation supported. Free and browser-based.', ko: 'UUID v1, v4, v6, v7을 즉시 생성. 대량 생성 지원. 무료, 브라우저 기반.' },
+
+  'seo.regexTester.title': { en: 'Regex Tester - Free Online Regular Expression Tool', ko: '정규식 테스터 - 무료 온라인 정규표현식 도구' },
+  'seo.regexTester.description': { en: 'Test regular expressions with real-time highlighting. Supports flags and capture groups. Free online.', ko: '실시간 하이라이트로 정규표현식 테스트. 플래그와 캡처 그룹 지원. 무료 온라인.' },
+
+  'seo.xmlFormatter.title': { en: 'XML Formatter & Validator - Free Online Tool', ko: 'XML 포매터 & 검증기 - 무료 온라인 도구' },
+  'seo.xmlFormatter.description': { en: 'Format, beautify and validate XML online. Minify option available. No server uploads.', ko: 'XML 정리, 들여쓰기, 검증을 온라인에서. 압축 옵션 제공. 서버 업로드 없음.' },
+
+  'seo.xmlParser.title': { en: 'XML to JSON Converter - Free Online Tool', ko: 'XML ↔ JSON 변환기 - 무료 온라인 도구' },
+  'seo.xmlParser.description': { en: 'Convert between XML and JSON formats instantly. Bi-directional conversion. Free and browser-based.', ko: 'XML과 JSON 형식을 즉시 상호 변환. 양방향 변환 지원. 무료, 브라우저 기반.' },
+
+  // Image Tools SEO
+  'seo.imageResize.title': { en: 'Image Resize - Free Online Tool (No Upload)', ko: '이미지 리사이즈 - 무료 온라인 도구 (업로드 없음)' },
+  'seo.imageResize.description': { en: 'Resize images to any dimension instantly. No server uploads - 100% private. Supports JPG, PNG, WebP.', ko: '이미지 크기를 원하는 대로 즉시 조정. 서버 업로드 없음 - 100% 안전. JPG, PNG, WebP 지원.' },
+
+  'seo.imageCompress.title': { en: 'Image Compress - Reduce File Size Free Online', ko: '이미지 압축 - 용량 줄이기 무료 온라인' },
+  'seo.imageCompress.description': { en: 'Compress images and reduce file size without losing quality. No uploads to server, works in browser.', ko: '화질 손실 없이 이미지 용량 줄이기. 서버 업로드 없이 브라우저에서 처리.' },
+
+  'seo.formatConvert.title': { en: 'Image Format Converter (PNG, JPG, WebP) - Free', ko: '이미지 포맷 변환 (PNG, JPG, WebP) - 무료' },
+  'seo.formatConvert.description': { en: 'Convert images between PNG, JPG, and WebP formats. Fast, free, and no server uploads required.', ko: 'PNG, JPG, WebP 형식 간 이미지 변환. 빠르고, 무료이며, 서버 업로드 불필요.' },
+
+  'seo.imageCrop.title': { en: 'Image Crop - Free Online Tool (No Upload)', ko: '이미지 자르기 - 무료 온라인 도구 (업로드 없음)' },
+  'seo.imageCrop.description': { en: 'Crop images freely or by aspect ratio. No server uploads - your images stay private. Free online tool.', ko: '이미지를 자유롭게 또는 비율로 자르기. 서버 업로드 없음 - 이미지가 비공개로 유지. 무료 온라인 도구.' },
+
+  'seo.gifMaker.title': { en: 'GIF Maker - Create Animated GIFs Free Online', ko: 'GIF 만들기 - 애니메이션 GIF 무료 온라인 생성' },
+  'seo.gifMaker.description': { en: 'Create animated GIFs from multiple images. Adjust frame delay, free to use, no uploads required.', ko: '여러 이미지로 애니메이션 GIF 생성. 프레임 지연 조정, 무료 사용, 업로드 불필요.' },
+
+  'seo.imageToBase64.title': { en: 'Image to Base64 Converter - Free Online Tool', ko: '이미지 → Base64 변환기 - 무료 온라인 도구' },
+  'seo.imageToBase64.description': { en: 'Convert images to Base64 encoded strings instantly. Perfect for embedding in HTML/CSS. No uploads.', ko: '이미지를 Base64 문자열로 즉시 변환. HTML/CSS 임베딩에 적합. 업로드 없음.' },
+
+  'seo.addWatermark.title': { en: 'Add Watermark to Image - Free Online Tool', ko: '이미지 워터마크 추가 - 무료 온라인 도구' },
+  'seo.addWatermark.description': { en: 'Add text watermarks to images. Customize position, size, opacity. No server uploads - 100% private.', ko: '이미지에 텍스트 워터마크 추가. 위치, 크기, 투명도 조정. 서버 업로드 없음 - 100% 안전.' },
+
+  // PDF Tools SEO
+  'seo.pdfToImage.title': { en: 'PDF to Image Converter - Free Online (No Upload)', ko: 'PDF → 이미지 변환 - 무료 온라인 (업로드 없음)' },
+  'seo.pdfToImage.description': { en: 'Convert PDF pages to JPG/PNG images. No server uploads - your files stay private. Free online tool.', ko: 'PDF 페이지를 JPG/PNG 이미지로 변환. 서버 업로드 없음 - 파일이 비공개로 유지. 무료 온라인 도구.' },
+
+  'seo.imageToPdf.title': { en: 'Image to PDF Converter - Free Online Tool', ko: '이미지 → PDF 변환 - 무료 온라인 도구' },
+  'seo.imageToPdf.description': { en: 'Convert images to PDF document. Combine multiple images into one PDF. No server uploads required.', ko: '이미지를 PDF 문서로 변환. 여러 이미지를 하나의 PDF로 합치기. 서버 업로드 불필요.' },
+
+  'seo.mergePdf.title': { en: 'Merge PDF - Combine PDFs Free Online (No Upload)', ko: 'PDF 합치기 - 무료 온라인 PDF 결합 (업로드 없음)' },
+  'seo.mergePdf.description': { en: 'Combine multiple PDF files into one. No server uploads - 100% secure and private. Fast and free.', ko: '여러 PDF 파일을 하나로 합치기. 서버 업로드 없이 100% 안전하고 비공개. 빠르고 무료.' },
+
+  'seo.splitPdf.title': { en: 'Split PDF - Separate Pages Free Online', ko: 'PDF 분할 - 페이지 나누기 무료 온라인' },
+  'seo.splitPdf.description': { en: 'Split PDF into individual pages or ranges. No server uploads - your documents stay private. Free tool.', ko: 'PDF를 개별 페이지 또는 범위로 분할. 서버 업로드 없음 - 문서가 비공개로 유지. 무료 도구.' },
+
+  'seo.compressPdf.title': { en: 'Compress PDF - Reduce File Size Free Online', ko: 'PDF 압축 - 용량 줄이기 무료 온라인' },
+  'seo.compressPdf.description': { en: 'Reduce PDF file size without losing quality. No uploads to server, works entirely in browser.', ko: '품질 손실 없이 PDF 용량 줄이기. 서버 업로드 없이 브라우저에서만 처리.' },
+
+  'seo.pdfPageExtract.title': { en: 'Extract PDF Pages - Free Online Tool', ko: 'PDF 페이지 추출 - 무료 온라인 도구' },
+  'seo.pdfPageExtract.description': { en: 'Extract specific pages from PDF. Select pages to save as new PDF. No server uploads required.', ko: 'PDF에서 특정 페이지 추출. 선택한 페이지를 새 PDF로 저장. 서버 업로드 불필요.' },
+
+  'seo.pdfTextExtract.title': { en: 'PDF Text Extractor - Copy Text from PDF Free', ko: 'PDF 텍스트 추출 - PDF에서 텍스트 복사 무료' },
+  'seo.pdfTextExtract.description': { en: 'Extract all text from PDF documents. Copy or download as TXT. No uploads - works in your browser.', ko: 'PDF 문서에서 모든 텍스트 추출. 복사 또는 TXT로 다운로드. 업로드 없이 브라우저에서 작동.' },
 };
 
 interface I18nContextType {

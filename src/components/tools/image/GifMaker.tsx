@@ -118,7 +118,7 @@ export default function GifMaker() {
   };
 
   return (
-    <ToolLayout title={t('tool.gifMaker')} description={t('tool.gifMaker.desc')}>
+    <ToolLayout title={t('tool.gifMaker')} description={t('tool.gifMaker.desc')} seoKey="gifMaker">
       {/* Upload Area */}
       <FileDropZone
         onFileSelect={handleFileSelect}

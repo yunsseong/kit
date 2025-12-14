@@ -117,7 +117,7 @@ export default function ImageToPdf() {
   };
 
   return (
-    <ToolLayout title={t('tool.imageToPdf')} description={t('tool.imageToPdf.desc')}>
+    <ToolLayout title={t('tool.imageToPdf')} description={t('tool.imageToPdf.desc')} seoKey="imageToPdf">
       {/* Settings */}
       <div className="card-brutal">
         <h3 className="font-display font-bold uppercase text-sm mb-4">{t('common.settings')}</h3>

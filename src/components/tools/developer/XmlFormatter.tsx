@@ -148,7 +148,7 @@ export default function XmlFormatter() {
 </bookstore>`;
 
   return (
-    <ToolLayout title={t('tool.xmlFormatter')} description={t('tool.xmlFormatter.desc')}>
+    <ToolLayout title={t('tool.xmlFormatter')} description={t('tool.xmlFormatter.desc')} seoKey="xmlFormatter">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Input */}
         <div>

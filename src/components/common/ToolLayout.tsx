@@ -1,15 +1,23 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 import { useI18n } from '../../contexts/I18nContext';
+import { useSEO } from '../../hooks/useSEO';
 
 interface ToolLayoutProps {
   title: string;
   description?: string;
+  seoKey?: string;
   children: ReactNode;
 }
 
-export default function ToolLayout({ title, description, children }: ToolLayoutProps) {
+export default function ToolLayout({ title, description, seoKey, children }: ToolLayoutProps) {
   const { t } = useI18n();
+
+  // Apply SEO meta tags
+  useSEO({
+    title: seoKey ? t(`seo.${seoKey}.title`) : title,
+    description: seoKey ? t(`seo.${seoKey}.description`) : (description || ''),
+  });
 
   return (
     <div className="animate-slide-up">

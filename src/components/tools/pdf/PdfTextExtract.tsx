@@ -99,7 +99,7 @@ export default function PdfTextExtract() {
   };
 
   return (
-    <ToolLayout title={t('tool.pdfTextExtract')} description={t('tool.pdfTextExtract.desc')}>
+    <ToolLayout title={t('tool.pdfTextExtract')} description={t('tool.pdfTextExtract.desc')} seoKey="pdfTextExtract">
       {/* Upload */}
       {pageTexts.length === 0 && !processing && (
         <FileDropZone

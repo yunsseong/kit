@@ -81,7 +81,7 @@ export default function CompressPdf() {
     : 0;
 
   return (
-    <ToolLayout title={t('tool.compressPdf')} description={t('tool.compressPdf.desc')}>
+    <ToolLayout title={t('tool.compressPdf')} description={t('tool.compressPdf.desc')} seoKey="compressPdf">
       {!originalFile ? (
         <FileDropZone
           onFileSelect={handleFileSelect}

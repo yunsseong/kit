@@ -85,7 +85,7 @@ export default function ImageCrop() {
   };
 
   return (
-    <ToolLayout title={t('tool.imageCrop')} description={t('tool.imageCrop.desc')}>
+    <ToolLayout title={t('tool.imageCrop')} description={t('tool.imageCrop.desc')} seoKey="imageCrop">
       {!image ? (
         <FileDropZone
           onFileSelect={handleFileSelect}

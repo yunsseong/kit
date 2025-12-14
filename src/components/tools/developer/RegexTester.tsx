@@ -94,7 +94,7 @@ export default function RegexTester() {
   };
 
   return (
-    <ToolLayout title={t('tool.regexTester')} description={t('tool.regexTester.desc')}>
+    <ToolLayout title={t('tool.regexTester')} description={t('tool.regexTester.desc')} seoKey="regexTester">
       {/* Pattern Input */}
       <div>
         <label className="font-display font-bold uppercase tracking-wider text-sm mb-2 block">

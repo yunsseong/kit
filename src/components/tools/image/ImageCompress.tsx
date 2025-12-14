@@ -74,7 +74,7 @@ export default function ImageCompress() {
     : 0;
 
   return (
-    <ToolLayout title={t('tool.imageCompress')} description={t('tool.imageCompress.desc')}>
+    <ToolLayout title={t('tool.imageCompress')} description={t('tool.imageCompress.desc')} seoKey="imageCompress">
       {!originalFile ? (
         <FileDropZone
           onFileSelect={handleFileSelect}

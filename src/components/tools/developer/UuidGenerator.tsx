@@ -355,7 +355,7 @@ export default function UuidGenerator() {
   const needsNameInput = selectedVersion === 'v3' || selectedVersion === 'v5';
 
   return (
-    <ToolLayout title={t('tool.uuidGenerator')} description={t('tool.uuidGenerator.desc')}>
+    <ToolLayout title={t('tool.uuidGenerator')} description={t('tool.uuidGenerator.desc')} seoKey="uuidGenerator">
       {/* Version Selection */}
       <div className="flex flex-wrap gap-2">
         {versions.map((v) => (

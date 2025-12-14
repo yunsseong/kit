@@ -58,7 +58,7 @@ export default function FormatConvert() {
   };
 
   return (
-    <ToolLayout title={t('tool.formatConvert')} description={t('tool.formatConvert.desc')}>
+    <ToolLayout title={t('tool.formatConvert')} description={t('tool.formatConvert.desc')} seoKey="formatConvert">
       {!image ? (
         <FileDropZone
           onFileSelect={handleFileSelect}

@@ -30,7 +30,7 @@ export default function HashGenerator() {
   };
 
   return (
-    <ToolLayout title={t('tool.hashGenerator')} description={t('tool.hashGenerator.desc')}>
+    <ToolLayout title={t('tool.hashGenerator')} description={t('tool.hashGenerator.desc')} seoKey="hashGenerator">
       {/* Input */}
       <div>
         <label className="font-display font-bold uppercase tracking-wider text-sm mb-2 block">

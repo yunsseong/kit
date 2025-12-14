@@ -46,7 +46,7 @@ export default function QrGenerator() {
   };
 
   return (
-    <ToolLayout title={t('tool.qrGenerator')} description={t('tool.qrGenerator.desc')}>
+    <ToolLayout title={t('tool.qrGenerator')} description={t('tool.qrGenerator.desc')} seoKey="qrGenerator">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Input Section */}
         <div className="space-y-6">

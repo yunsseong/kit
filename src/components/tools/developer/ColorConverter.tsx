@@ -156,7 +156,7 @@ export default function ColorConverter() {
   };
 
   return (
-    <ToolLayout title={t('tool.colorConverter')} description={t('tool.colorConverter.desc')}>
+    <ToolLayout title={t('tool.colorConverter')} description={t('tool.colorConverter.desc')} seoKey="colorConverter">
       {/* Color Preview */}
       <div
         className="h-32 border-3 border-charcoal dark:border-cream shadow-brutal"

@@ -30,7 +30,7 @@ export default function Base64Tool() {
   };
 
   return (
-    <ToolLayout title={t('tool.base64')} description={t('tool.base64.desc')}>
+    <ToolLayout title={t('tool.base64')} description={t('tool.base64.desc')} seoKey="base64">
       {/* Mode Toggle */}
       <div className="flex gap-2">
         <button

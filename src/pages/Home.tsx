@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 import { useI18n } from '../contexts/I18nContext';
 import { useSearch } from '../contexts/SearchContext';
+import { useSEO } from '../hooks/useSEO';
 import ToolCard from '../components/common/ToolCard';
 
 // Icon components - Brutalist geometric style
@@ -189,6 +190,11 @@ const TextIcon = () => (
 export default function Home() {
   const { t } = useI18n();
   const { search } = useSearch();
+
+  useSEO({
+    title: t('seo.home.title'),
+    description: t('seo.home.description'),
+  });
 
   const developerTools = [
     { to: '/json-formatter', icon: <CodeIcon />, titleKey: 'tool.jsonFormatter', descKey: 'tool.jsonFormatter.desc' },
