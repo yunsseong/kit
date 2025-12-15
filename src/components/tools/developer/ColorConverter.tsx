@@ -157,11 +157,16 @@ export default function ColorConverter() {
 
   return (
     <ToolLayout title={t('tool.colorConverter')} description={t('tool.colorConverter.desc')} seoKey="colorConverter">
-      {/* Color Preview */}
-      <div
-        className="h-32 border-3 border-charcoal dark:border-cream shadow-brutal"
-        style={{ backgroundColor: color.hex }}
-      />
+      {/* Color Picker */}
+      <div className="card-brutal">
+        <h3 className="font-display font-bold uppercase mb-4">Color Picker</h3>
+        <input
+          type="color"
+          value={color.hex}
+          onChange={(e) => updateFromHex(e.target.value)}
+          className="w-full h-16 cursor-pointer border-3 border-charcoal dark:border-cream"
+        />
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* HEX */}
@@ -275,16 +280,11 @@ export default function ColorConverter() {
         </div>
       </div>
 
-      {/* Color Picker */}
-      <div className="card-brutal">
-        <h3 className="font-display font-bold uppercase mb-4">Color Picker</h3>
-        <input
-          type="color"
-          value={color.hex}
-          onChange={(e) => updateFromHex(e.target.value)}
-          className="w-full h-16 cursor-pointer border-3 border-charcoal dark:border-cream"
-        />
-      </div>
+      {/* Color Preview */}
+      <div
+        className="h-32 border-3 border-charcoal dark:border-cream shadow-brutal"
+        style={{ backgroundColor: color.hex }}
+      />
     </ToolLayout>
   );
 }
