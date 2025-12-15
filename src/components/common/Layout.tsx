@@ -15,9 +15,17 @@ export default function Layout({ children }: LayoutProps) {
       <footer className="border-t-3 border-charcoal dark:border-dark-border mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            <p className="font-mono text-sm text-slate dark:text-dark-muted">
-              © 2025 Kit. All processing happens in your browser.
-            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4">
+              <p className="font-mono text-sm text-slate dark:text-dark-muted">
+                © 2025 Kit. All processing happens in your browser.
+              </p>
+              <a
+                href="mailto:team.maesil@gmail.com"
+                className="font-mono text-sm text-charcoal dark:text-cream hover:text-lime dark:hover:text-lime transition-colors"
+              >
+                Built by Maesil · <span className="underline">Available for projects</span>
+              </a>
+            </div>
             <div className="flex items-center gap-2">
               <span className="inline-block w-3 h-3 bg-lime"></span>
               <span className="font-mono text-xs text-slate dark:text-dark-muted">
