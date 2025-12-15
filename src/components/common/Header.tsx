@@ -53,13 +53,16 @@ export default function Header() {
 
           {/* Actions */}
           <div className="flex items-center gap-2">
-            {/* Language Toggle */}
-            <button
-              onClick={() => setLanguage(language === 'en' ? 'ko' : 'en')}
-              className="h-10 px-3 font-mono text-xs font-bold border-3 border-charcoal dark:border-dark-border hover:bg-charcoal hover:text-cream dark:hover:bg-lime dark:hover:text-charcoal dark:hover:border-lime transition-colors"
+            {/* Language Dropdown */}
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value as 'en' | 'ko' | 'ja')}
+              className="h-10 px-3 font-mono text-xs font-bold border-3 border-charcoal dark:border-dark-border bg-cream dark:bg-dark-bg hover:bg-charcoal hover:text-cream dark:hover:bg-lime dark:hover:text-charcoal dark:hover:border-lime transition-colors cursor-pointer focus:outline-none"
             >
-              {language === 'en' ? '한국어' : 'EN'}
-            </button>
+              <option value="en" className="bg-cream dark:bg-dark-bg text-charcoal dark:text-cream">EN</option>
+              <option value="ko" className="bg-cream dark:bg-dark-bg text-charcoal dark:text-cream">한국어</option>
+              <option value="ja" className="bg-cream dark:bg-dark-bg text-charcoal dark:text-cream">日本語</option>
+            </select>
 
             {/* Theme Toggle */}
             <button
