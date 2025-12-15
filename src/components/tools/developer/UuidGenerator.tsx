@@ -376,13 +376,21 @@ export default function UuidGenerator() {
             {versionInfo[selectedVersion].label}
             <span className="ml-2 text-sm font-normal opacity-70">{versionInfo[selectedVersion].desc}</span>
           </h3>
-          <button
-            onClick={copyToClipboard}
-            className="btn-brutal btn-brutal-sm"
-            disabled={!result}
-          >
-            {copied ? t('common.copied') : t('common.copy')}
-          </button>
+          <div className="flex gap-2">
+            <button onClick={generate} className="btn-brutal-primary btn-brutal-sm">
+              {t('common.generate')}
+            </button>
+            <button
+              onClick={copyToClipboard}
+              className="btn-brutal btn-brutal-sm"
+              disabled={!result}
+            >
+              {copied ? t('common.copied') : t('common.copy')}
+            </button>
+            <button onClick={() => setResult('')} className="btn-brutal btn-brutal-sm">
+              {t('common.clear')}
+            </button>
+          </div>
         </div>
         <code className="font-mono text-sm break-all block bg-mist dark:bg-charcoal p-3 border-3 border-charcoal dark:border-cream min-h-[48px]">
           {result || <span className="opacity-30">Click generate to create UUID</span>}
@@ -451,15 +459,6 @@ export default function UuidGenerator() {
         </div>
       </div>
 
-      {/* Generate Button */}
-      <div className="flex gap-4">
-        <button onClick={generate} className="btn-brutal-primary">
-          {t('common.generate')}
-        </button>
-        <button onClick={() => setResult('')} className="btn-brutal">
-          {t('common.clear')}
-        </button>
-      </div>
     </ToolLayout>
   );
 }
