@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import ToolLayout from '../../common/ToolLayout';
 import FileDropZone from '../../common/FileDropZone';
 import { useI18n } from '../../../contexts/I18nContext';
@@ -9,7 +9,6 @@ export default function ImageResize() {
   const [originalSize, setOriginalSize] = useState({ width: 0, height: 0 });
   const [newSize, setNewSize] = useState({ width: 0, height: 0 });
   const [maintainRatio, setMaintainRatio] = useState(true);
-  const [processing, setProcessing] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const handleFileSelect = (files: File[]) => {
@@ -47,10 +46,9 @@ export default function ImageResize() {
     }
   };
 
-  const resizeImage = async () => {
-    if (!image || !canvasRef.current) return;
-
-    setProcessing(true);
+  // 실시간 미리보기: 이미지나 크기가 변경될 때마다 자동 렌더링
+  useEffect(() => {
+    if (!image || !canvasRef.current || newSize.width <= 0 || newSize.height <= 0) return;
 
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
@@ -62,10 +60,9 @@ export default function ImageResize() {
     const img = new Image();
     img.onload = () => {
       ctx.drawImage(img, 0, 0, newSize.width, newSize.height);
-      setProcessing(false);
     };
     img.src = image;
-  };
+  }, [image, newSize.width, newSize.height]);
 
   const downloadImage = () => {
     if (!canvasRef.current) return;
@@ -176,14 +173,7 @@ export default function ImageResize() {
 
           {/* Actions */}
           <div className="flex flex-wrap gap-4">
-            <button
-              onClick={resizeImage}
-              disabled={processing}
-              className="btn-brutal-primary"
-            >
-              {processing ? t('image.processing') : t('image.resize')}
-            </button>
-            <button onClick={downloadImage} className="btn-brutal">
+            <button onClick={downloadImage} className="btn-brutal-primary">
               {t('common.download')}
             </button>
             <button onClick={() => setImage(null)} className="btn-brutal">
