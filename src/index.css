@@ -26,17 +26,14 @@
     min-height: 100vh;
   }
 
-  /* Custom scrollbar */
+  /* Hide scrollbar */
+  * {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+
   ::-webkit-scrollbar {
-    @apply w-2;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-mist dark:bg-dark-card;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-charcoal dark:bg-dark-muted rounded-none hover:dark:bg-lime;
+    display: none; /* Chrome, Safari, Opera */
   }
 
   /* Selection */
@@ -72,7 +69,7 @@
 
   /* Neo-Brutalist Card */
   .card-brutal {
-    @apply border-3 border-charcoal bg-white p-6;
+    @apply border-3 border-charcoal bg-white p-4 sm:p-6;
     @apply shadow-brutal transition-all duration-200;
     @apply dark:border-dark-border dark:bg-dark-card dark:shadow-brutal-dark;
   }
@@ -172,6 +169,14 @@
 @layer utilities {
   .border-3 {
     border-width: 3px;
+  }
+
+  .pb-safe {
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 40px);
+  }
+
+  .pt-safe {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 8px);
   }
 
   .text-balance {

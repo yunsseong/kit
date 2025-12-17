@@ -245,11 +245,11 @@ export default function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="mb-16 pt-8">
-        <h1 className="font-display text-5xl md:text-7xl font-bold tracking-tighter mb-4">
+      <section className="mb-8 sm:mb-16 pt-2 sm:pt-8">
+        <h1 className="font-display text-3xl sm:text-5xl md:text-7xl font-bold tracking-tighter mb-2 sm:mb-4">
           {t('hero.title')}
         </h1>
-        <p className="font-body text-lg md:text-xl text-slate dark:text-dark-muted max-w-2xl">
+        <p className="font-body text-sm sm:text-lg md:text-xl text-slate dark:text-dark-muted max-w-2xl">
           {t('hero.subtitle')}
         </p>
       </section>

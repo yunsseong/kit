@@ -10,19 +10,27 @@ export default function Layout({ children }: LayoutProps) {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   return (
-    <div className="min-h-screen grid-pattern">
+    <div className="min-h-[100dvh] grid-pattern flex flex-col">
       <Header />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-8 w-full">
         {children}
       </main>
-      <footer className="border-t-3 border-charcoal dark:border-dark-border mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex justify-center items-center">
+      <footer className="border-t-3 border-charcoal dark:border-dark-border mt-8 sm:mt-16 pb-safe">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 pb-6 sm:pb-6">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
+            <a
+              href="https://maesil.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs sm:text-sm text-charcoal dark:text-cream hover:text-lime dark:hover:text-lime transition-colors"
+            >
+              © {new Date().getFullYear()} Maesil
+            </a>
             <button
               onClick={() => setIsContactOpen(true)}
-              className="font-mono text-sm text-charcoal dark:text-cream hover:text-lime dark:hover:text-lime transition-colors"
+              className="font-mono text-xs sm:text-sm text-charcoal dark:text-cream hover:text-lime dark:hover:text-lime transition-colors"
             >
-              Built by Maesil · <span className="underline">Available for projects</span>
+              <span className="underline">Available for projects</span>
             </button>
           </div>
         </div>
